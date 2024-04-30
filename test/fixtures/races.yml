@@ -2,14 +2,10 @@
 
 one:
   location: MyString
-  description: MyString
   date: MyString
   time: MyString
-  sessions: MyString
 
 two:
   location: MyString
-  description: MyString
   date: MyString
   time: MyString
-  sessions: MyString
