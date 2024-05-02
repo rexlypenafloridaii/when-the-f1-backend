@@ -1,3 +1,4 @@
 class Stage < ApplicationRecord
-  belongs_to :race
+  has_many :race_stages
+  has_many :races, through: :race_stages
 end
