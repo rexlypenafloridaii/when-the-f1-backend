@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_30_201036) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_02_025649) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "race_stages", force: :cascade do |t|
+    t.integer "race_id"
+    t.integer "stage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "races", force: :cascade do |t|
     t.string "location"
@@ -29,7 +36,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_201036) do
     t.string "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "race_id"
   end
 
   create_table "user_races", force: :cascade do |t|

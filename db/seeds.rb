@@ -14,8 +14,11 @@ User.create(name: "Max Verstappen", email: "max@example.com", password: "passwor
 Race.create(location: "Monaco", date: "January 1", time: "12 p.m.")
 Race.create(location: "Spa", date: "April 1", time: "3 p.m.")
 
-Stage.create(name: "Free Practice 1", location: "Monaco", date: "January 1", time: "12 p.m.", race_id: 1)
-Stage.create(name: "Race", location: "Spa", date: "April 3", time: "3 p.m.", race_id: 2)
+Stage.create(name: "Free Practice 1", location: "Monaco", date: "January 1", time: "12 p.m.")
+Stage.create(name: "Race", location: "Spa", date: "April 3", time: "3 p.m.")
 
 UserRace.create(user_id: 1, race_id: 1)
 UserRace.create(user_id: 2, race_id: 2)
+
+RaceStage.create(race_id: 1, stage_id: 1)
+RaceStage.create(race_id: 2, stage_id: 2)
