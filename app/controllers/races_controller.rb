@@ -1,11 +1,13 @@
 class RacesController < ApplicationController
+  before_action :authenticate_user
+
   def index
-    @races = Race.all
+    @races = current_user.races
     render :index
   end
 
   def show
-    @race = Race.find_by(id: params[:id])
+    @race = current_user.races.find_by(id: params[:id])
     render :show
   end
 end

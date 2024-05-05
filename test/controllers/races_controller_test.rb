@@ -5,8 +5,16 @@ class RacesControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 
+  setup do
+    @user = User.create(name: "Test", email: "test@test.com", password: "password")
+    @order = Order.create(user_id: @user.id, product_id: Product.first.id, quantity: 10)
+    post "/sessions.json", params: { email: "test@test.com", password: "password" }
+    data = JSON.parse(response.body)
+    @jwt = data["jwt"]
+  end
+
   test "index" do
-    get "/races.json"
+    get "/races.json", headers: { "Authorization" => "Bearer #{@jwt}" }
     assert_response 200
 
     data = JSON.parse(response.body)
@@ -14,7 +22,7 @@ class RacesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show" do
-    get "/races/#{Race.first.id}.json"
+    get "/races/#{@race.id}.json", headers: { "Authorization" => "Bearer #{@jwt}" }
     assert_response 200
 
     data = JSON.parse(response.body)
