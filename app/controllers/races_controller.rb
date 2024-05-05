@@ -2,8 +2,7 @@ class RacesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @races = current_user.races
-    render :index
+    response = HTTP.get("https://api.openf1.org/v1/sessions?year=2024&session_type=Race&session_name=Race")
   end
 
   def show
