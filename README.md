@@ -1,24 +1,33 @@
-# README
+# When the F1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A glorified timezone converter version for Formula 1 races throughout the season.
 
-Things you may want to cover:
+Users need to sign up for an account and log in to see race information such as location, track name, and race start time (automatically converted to hte user's current location).
 
-* Ruby version
+Technologies for the backend of "When the F1" include Ruby on Rails, PostgreSQL database, React.js (frontend), and most importantly the OpenF1 open source API.
 
-* System dependencies
+## Installation
 
-* Configuration
+```bash
+bundle install
+rails db:create db:migrate db:seed
+```
 
-* Database creation
+## Usage
 
-* Database initialization
+```bash
+rails server
+```
 
-* How to run the test suite
+To run API tests from the `test` folder:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails test
+```
 
-* Deployment instructions
+## Roadmap
 
-* ...
+Upcoming features include:
+- Weather information for each race
+- Dedicated section for driver and constructor standings throughout the season.
+- Additional visual improvements
