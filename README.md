@@ -25,6 +25,10 @@ To run API tests from the `test` folder:
 rails test
 ```
 
+Make sure to have the backend running on http://localhost:3000.
+Frontend should be on http://localhost:5173.
+Learn more about the [frontend](https://github.com/rexlypenafloridaii/when-the-f1-frontend).
+
 ## Roadmap
 
 Upcoming features include:
